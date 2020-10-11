@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const wetherRoute = require('./routes/weather');
 require("dotenv").config();
-console.log(process.env.API_KEY)
+
 
 
 // Middleware

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tetra-shayeb/Wether-APP#readme",
   "dependencies": {
+    "await": "^0.2.6",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
