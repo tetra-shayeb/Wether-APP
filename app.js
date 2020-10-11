@@ -2,9 +2,6 @@ const express = require("express");
 const app = express();
 const wetherRoute = require('./routes/weather');
 require("dotenv").config();
-
-
-
 // Middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }))
