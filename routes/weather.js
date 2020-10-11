@@ -40,7 +40,12 @@ router.post('/', (req, res) => {
           
 
     } catch (err) {
-
+        res.render({
+            city: 'somthing wrong',
+            des: null,
+            icon: null,
+            temp: null
+        })
 }
 
 
