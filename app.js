@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const wetherRoute = require('./routes/weather');
 require("dotenv").config();
+app.use(express.json());
+
 // Middleware
 app.use(express.static('Public'));
 app.use(express.urlencoded({ extended: true }))
@@ -14,6 +16,20 @@ app.set('view engine', 'ejs');
 
 // Middleware route
 app.use('/', weatherRoute);
+
+
+//login
+
+const users = []
+app.get('/users', (req, res) => {
+    res.json(users)
+})
+app.post('/users', (req, res) => {
+    const users = { namae: req.body.name, password: req.body.password };
+    users.push(user);
+    res.status(201).send
+})
+
 
 const port = 3000;
 app.listen(port, () => {

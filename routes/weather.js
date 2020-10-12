@@ -1,6 +1,9 @@
 const router = require('express').Router();
-const fetch = require('node-fetch')
-require('dotenv').config()
+const fetch = require('node-fetch');
+require('dotenv').config();
+
+
+
 router.get('/', (req, res) => {
     res.render('index', {
         city: null,
