@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const bcrypt = require('bcrypt')
 require("dotenv").config();
 app.use(express.json());
 
@@ -18,15 +19,24 @@ app.use('/', weatherRoute);
 
 //login
 
+const users = [];
+
 app.get('/users', (req, res) => {
     res.json(users);
 });
 
-app.post('/users', (res, req) => {
-    const user = { name: req.body.name, password: req.body.password };
-    users.push(user);
-    res.static(201).send(user)
-});
+app.post('/users', async (req, res) => {
+    try {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10)
+      const user = { name: req.body.name, password: hashedPassword }
+      users.push(user)
+      res.status(201).send()
+    } catch {
+      res.status(500).send()
+    }
+  })
+
+
 
 const port = 3000;
 app.listen(port, () => {
