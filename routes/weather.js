@@ -10,10 +10,11 @@ router.get('/', (req, res) => {
         temp: null
     })
 })
+console.log("Api", process.env.API_KEY)
 router.post('/', async (req, res) => {
     const city = req.body.city;
     console.log(city)
-    const url_api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=637974300193b6510a4cb3c283bb984b`
+    const url_api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`
 
     try {
 
