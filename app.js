@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bcrypt = require('bcrypt')
+const db = require('./db');
 require("dotenv").config();
 app.use(express.json());
 
@@ -16,6 +17,9 @@ app.set('view engine', 'ejs');
 
 // Middleware route
 app.use('/', weatherRoute);
+
+
+
 
 //login
 
