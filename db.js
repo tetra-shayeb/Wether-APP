@@ -18,10 +18,6 @@ const options = {
 
 
 // connecting mongoose
-
-
-
-
 mongoose.connect(process.env.DB_URL, options, () => {
     console.log('DB READY TO USE');
   });
@@ -34,7 +30,7 @@ mongoose.connect(process.env.DB_URL, options, () => {
   db.on('disconnected', () => console.log('MONGO DISCONNECTED'));
   
   
-  const userModel = mongoose.model('user33', userSchema);
+  //const userModel = mongoose.model('user33', userSchema);
   
   const getAll = async () => {
     const allData = await userModel.find({});
