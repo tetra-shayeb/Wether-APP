@@ -9,9 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Import Route
 const weatherRoute = require('./routes/weather');
-
-
-
+const AuthRoute = require('./routes/Auth');
 
 
 // Use View Engine
@@ -26,6 +24,8 @@ app.set('view engine', 'ejs');
 
 // Middleware route
 app.use('/', weatherRoute);
+app.use('/',AuthRoute);
+
 
 
 

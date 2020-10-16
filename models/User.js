@@ -5,15 +5,15 @@ const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-  };
+};
 
-  const userSchema = new mongoose.Schema({
-    email: { type: String, required: true, unique: true },
+const userSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    phoneNumber: { type: Number, required: true },
-  });
+    email: { type: String, required: true, unique: true },
+    phone: { type: Number, required: true },
+    password: { type: String, required: true }
+});
 
 
-  const User = mongoose.model('user33', userSchema);
-  module.exports = User;
+const User = mongoose.model('user33', userSchema);
+module.exports = User;
