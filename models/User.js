@@ -1,11 +1,4 @@
 const mongoose = require('mongoose');
-const Scehema = mongoose.Scehema;
-
-const options = {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-};
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true },
